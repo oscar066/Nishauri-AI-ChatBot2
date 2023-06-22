@@ -1,0 +1,267 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+
+- story: path 1 treatment_regiment and baby_dependant_eid 
+  steps:
+  - intent: greet
+  - action: utter_greet
+ 
+  - intent: treatment_regiment
+  - action: utter_treatment_regiment
+  - intent: baby_dependant_eid
+  - action: utter_baby_dependant_eid
+  - intent: thank
+  - action: utter_thank
+  - intent: goodbye 
+  - action: utter_goodbye
+
+- story: path 5 stable_client only
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: stable_client
+  - action: utter_stable_client
+  - intent: thank
+  - action: utter_thank
+  - intent: goodbye 
+  - action: utter_goodbye
+
+- story: path 6 viral_load_meaning 
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: viral_load_meaning
+  - action: utter_viral_load_meaning
+  - intent: vl_sample_frequency
+  - action: utter_vl_sample_frequency
+  - intent: thank
+  - action: utter_thank
+  - intent: goodbye 
+  - action: utter_goodbye
+
+- story: path 7 visit_frequency and side_effects 
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: report_side_effects
+  - action: utter_report_side_effects
+  - intent: visit_frequency
+  - action: utter_visit_frequency
+  - intent: thank
+  - action: utter_thank
+  - intent: goodbye 
+  - action: utter_goodbye
+
+# if the User wants to know about multiple questions
+
+- story: path 8 if the User wants to know about multiple questions
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: report_side_effects
+  - action: utter_report_side_effects
+  - intent: treatment_regiment
+  - action: utter_treatment_regiment
+  - intent: baby_dependant_eid
+  - action: utter_baby_dependant_eid
+  - intent: stable_client
+  - action: utter_stable_client
+  - intent: viral_load_meaning
+  - action: utter_viral_load_meaning
+  - intent: vl_sample_frequency
+  - action: utter_vl_sample_frequency
+  - intent: visit_frequency
+  - action: utter_visit_frequency
+  - intent: thank
+  - action: utter_thank
+  - intent: goodbye 
+  - action: utter_goodbye
+
+# path for user starting with any question
+
+# path where the user starts with report side effect then to any question 
+
+# path for user asking all questions/intents in sequence
+
+- story: path for user asking all questions/intents in sequence
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: treatment_regiment
+  - action: utter_treatment_regiment
+  - intent: report_side_effects
+  - action: utter_report_side_effects
+  - intent: viral_load_meaning
+  - action: utter_viral_load_meaning
+  - intent: visit_frequency
+  - action: utter_visit_frequency
+  - intent: baby_dependant_eid
+  - action: utter_baby_dependant_eid
+  - intent: stable_client
+  - action: utter_stable_client
+  - intent: vl_sample_frequency
+  - action: utter_vl_sample_frequency
+  - intent: thank
+  - action: utter_thank
+  - intent: goodbye 
+  - action: utter_goodbye
+
+# path for user starting from any intent and continuing in any order
+
+- story: path for user starting from any intent and continuing in any order
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: treatment_regiment
+  - action: utter_treatment_regiment
+  - intent: report_side_effects
+  - action: utter_report_side_effects
+  - intent: viral_load_meaning
+  - action: utter_viral_load_meaning
+  - intent: visit_frequency
+  - action: utter_visit_frequency
+  - intent: baby_dependant_eid
+  - action: utter_baby_dependant_eid
+  - intent: stable_client
+  - action: utter_stable_client
+  - intent: vl_sample_frequency
+  - action: utter_vl_sample_frequency
+  - intent: thank
+  - action: utter_thank
+  - intent: goodbye 
+  - action: utter_goodbye
+
+# 
+- story: path for user starting with any question
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - user: |
+      What should I do If I get side effects from the medicine given?
+  - action: utter_report_side_effects
+  - user: |
+      What's the name of the treatment regimen I'm taking?
+  - action: utter_treatment_regiment
+  - user: |
+     What should I do if my baby's EID results come back positive?
+  - action: utter_baby_dependant_eid
+  - user: |
+      What does it mean to be a stable client?
+  - action: utter_stable_client
+  - user: |
+      What does viral load mean?
+  - action: utter_viral_load_meaning
+  - user: |
+      How frequently should I get my viral load sample taken?
+  - action: utter_vl_sample_frequency
+  - user: |
+      How often should I visit for check-ups?
+  - action: utter_visit_frequency
+  - user: |
+      What is the treatment regimen?
+  - action: utter_treatment_regiment
+  - user: |
+      Can babies become dependent on early infant diagnosis?
+  - action: utter_baby_dependant_eid
+  - user: |
+      What does it mean to be considered a stable client?
+  - action: utter_stable_client
+  - user: |
+      What's a High viral load and LDL viral load?
+  - action: utter_viral_load_meaning
+  - user: |
+      How frequently do I need to provide a sample for viral load testing?
+  - action: utter_vl_sample_frequency
+  - user: |
+      How often should I visit the facility if I am a stable client?
+  - action: utter_visit_frequency
+  - user: |
+      What's the difference between Suppressed viral load and Undetectable viral load?
+  - action: utter_suppressed_vs_undetectable_viral_load
+  - intent: thank
+  - action: utter_thank
+  - intent: goodbye 
+  - action: utter_goodbye
+
+# path 2 for user starting from any intent and continuing in any order
+
+- story: path for user starting from any intent and continuing in any order
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: baby_dependant_eid
+  - action: utter_baby_dependant_eid
+  - intent: report_side_effects
+  - action: utter_report_side_effects
+  - intent: stable_client
+  - action: utter_stable_client
+  - intent: vl_sample_frequency
+  - action: utter_vl_sample_frequency
+  - intent: treatment_regiment
+  - action: utter_treatment_regiment
+  - intent: visit_frequency
+  - action: utter_visit_frequency
+  - intent: viral_load_meaning
+  - action: utter_viral_load_meaning
+  - intent: thank
+  - action: utter_thank
+  - intent: goodbye 
+  - action: utter_goodbye
+
+  # path 3 for user starting from any intent and continuing in any order
+
+- story: path for user starting from any intent and continuing in any order
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: viral_load_meaning
+  - action: utter_viral_load_meaning
+  - intent: baby_dependant_eid
+  - action: utter_baby_dependant_eid
+  - intent: vl_sample_frequency
+  - action: utter_vl_sample_frequency
+  - intent: report_side_effects
+  - action: utter_report_side_effects
+  - intent: visit_frequency
+  - action: utter_visit_frequency
+  - intent: stable_client
+  - action: utter_stable_client
+  - intent: treatment_regiment
+  - action: utter_treatment_regiment
+  - intent: thank
+  - action: utter_thank
+  - intent: goodbye 
+  - action: utter_goodbye
+
+# path 4 for user starting from any intent and continuing in any order
+
+- story: path for user starting from any intent and continuing in any order
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: vl_sample_frequency
+  - action: utter_vl_sample_frequency
+  - intent: stable_client
+  - action: utter_stable_client
+  - intent: baby_dependant_eid
+  - action: utter_baby_dependant_eid
+  - intent: report_side_effects
+  - action: utter_report_side_effects
+  - intent: visit_frequency
+  - action: utter_visit_frequency
+  - intent: treatment_regiment
+  - action: utter_treatment_regiment
+  - intent: viral_load_meaning
+  - action: utter_viral_load_meaning
+  - intent: thank
+  - action: utter_thank
+  - intent: goodbye 
+  - action: utter_goodbye
+
