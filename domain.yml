@@ -1,0 +1,468 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  
+  - bot_challenge
+  - thank
+#  - chitchat
+  - ask_name
+  - ask_age
+  - ask_weather
+  - how_are_you
+  - joke
+#  - appointment
+
+#  - faq
+#  - faq_2
+  - report_side_effects
+  - treatment_regiment
+  - stable_client
+  - visit_frequency
+  - viral_load_meaning
+  - vl_sample_frequency
+  - baby_dependant_eid
+  - suppressed_vs_undetectable_viral_load
+
+# chatbot health tasks intents
+
+#  - appointment_booking
+#  - medication_reminder
+#  - nearest_location
+#  - out_of_scope
+
+# forms:
+#   appointment_form:
+#     required_slots:
+#       - date
+#       - day
+#       - nishauri_id
+
+# slots:
+#   date:
+#     type: text
+#     influence_conversation: true
+#     mappings:
+#       - type: from_entity
+#         entity: date
+#   day:
+#     type: text
+#     influence_conversation: true
+#     mappings:
+#       - type: from_entity
+#         entity: day
+#   nishauri_id:
+#     type: text
+#     influence_conversation: true
+#     mappings:
+#       - type: from_entity
+#         entity: nishauri_id
+
+
+responses:
+  utter_greet:
+  - text: Hey 🤗 How can I assist you?
+  - text: Hello there 🤚🏽 How can I assist you?  
+  - text: Hey 🤗 How can I be of service today?  
+  - text: Hello there! 🤚🏽 How can I assist you?
+  - text: Greetings! 🌞 How may I help you today?
+  - text: Welcome! 👋 How can I be of service today?
+
+  utter_services:
+  - text: |
+      I'm here to help you with various health-related matters. Feel free to ask me about:
+        - Getting information on your health by answering FAQs
+        - Assistance with appointment booking
+        - Setting medication reminders
+
+
+  # utter_ask_date:
+  # - text: "What date would you like to book the appointment?"
+  # - text: "Please provide the date you would like to book the appointment."
+  # - text: "What date would you like to book the appointment?"
+
+  # utter_ask_day:
+  # - text: "What day would you like to book the appointment?"
+  # - text: "Please provide the day you would like to book the appointment."
+  # - text: "What day would you like to book the appointment?"
+
+  # utter_ask_nishauri_id:
+  # - text: "Please provide your Nishauri ID."
+  # - text: "What is your Nishauri ID?"
+  # - text: "Please provide your Nishauri ID."
+
+  # utter_submit:
+  # - text: "Thank you for booking an appointment with us. We will send you a confirmation message shortly."
+
+  # utter_slots_values:
+  # - text: "I am going to book a clinic appointment using the following parameters:\n
+  #           - nishauri_id: {cuisine}\n
+  #           - date: {date}\n
+  #           - day: {day}"
+
+  utter_goodbye:
+  - text: "Bye 👋"
+  - text: "Goodbye! Take care! 😊"
+  - text: "Bye 👋 Have a great day!"
+  - text: "Goodbye! Take care! 😊 See you soon!"
+  - text: "Farewell! Remember to stay healthy and happy! 🌈"
+  - text: "Wishing you a wonderful day ahead! Goodbye! 😄"
+
+  utter_iamabot:
+  - text: "I'm an AI-powered Health bot designed to assist you. How can I help you today?"
+  - text: "I'm not a human am a HealthBot, but I'm here to provide you with information and support."
+
+  utter_please_rephrase:
+  - text: "I'm sorry, I didn't quite understand that. Could you rephrase?"
+
+  # utter_default:
+  # - text: Sorry I didn't get that. Can you rephrase?
+  
+
+  utter_thank:
+  - text: "You are Welcome"
+  - text: "You're welcome! 😊"
+  - text: "You're most welcome!"
+  - text: "No problem at all! Happy to help!"
+  - text: "Glad I could assist you!"
+
+  utter_affirm:
+  - text: "Great! 😄"
+  - text: "Awesome! 😄"
+  - text: "Perfect! 😄"
+
+  utter_deny:
+  - text: "Okay, no problem. 😊"
+  - text: "Alright, no problem. 😊"
+
+
+# chitchat Responses 
+
+  utter_ask_name:
+  - text: "Hello, my name is NishauriHealth Bot. 😊"
+  - text: "I am called NishauriHealth Bot! 😄"
+  - text: "You can call me NishauriHealth Bot. 😉"
+  - text: "People usually refer to me as NishauriHealth Bot. 😊"
+  - text: "My name is NishauriHealth Bot. How can I assist you? 😊"
+
+  utter_ask_weather:
+  - text: "The weather is quite pleasant today, with a gentle breeze and comfortable temperatures. ☀️🌤️"
+  - text: "It seems like a perfect day for outdoor activities, as the weather is mild and inviting. ☀️🌳"
+  - text: "It's a great time to appreciate the beauty of nature as the weather showcases a stunning blend of colors in the sky. 🌈🌅"
+  - text: "The weather conditions are ideal for a cozy day indoors, with a slight chill in the air and occasional drizzles. 🌧️🌧️"
+  - text: "Whether it's raining or shining, remember to embrace the day and make the most of what the weather has to offer. ☔️☀️"
+  - text: "Regardless of the weather, every day brings its own unique charm and opportunities for adventure and relaxation. 🌤️🌈"
+
+  utter_ask_age:
+  - text: "Sorry, I don't have an age. I am just a computer program. 🤖"
+  - text: "I don't have an age since I'm an AI bot. 🤖"
+  - text: "As a virtual assistant, I don't age. 🤖"
+  - text: "Age doesn't apply to me as I am an AI-based bot. 🤖"
+  - text: "I exist outside the realm of time and age. 🤖"
+
+  utter_how_are_you:
+  - text: "I'm doing well, thank you for asking. How can I assist you? 😊"
+  - text: "I'm functioning smoothly. How can I help you today? 😄"
+  - text: "I'm here and ready to help. What can I do for you? 😊"
+  - text: "I'm feeling good and ready to assist you with any queries. 😄"
+  - text: "Thank you for asking! I'm doing fine. How may I assist you? 😊"
+
+  utter_joke:
+  - text: "Why don't scientists trust atoms? Because they make up everything! 😄⚛️"
+  - text: "Why did the bicycle fall over? It was two-tired! 🚲😄"
+  - text: "What's the best time to go to the dentist? Tooth-hurty! 😁🦷"
+  - text: "Why did the tomato turn red? Because it saw the salad dressing! 🍅😄"
+  - text: "How do you make a tissue dance? You put a little boogie in it! 💃😄"
+  - text: "What do you call a fish with no eyes? Fsh! 🐟😄"
+  - text: "Why did the golfer bring two pairs of pants? In case he got a hole in one! ⛳👖😄"
+  - text: "Why don't skeletons fight each other? They don't have the guts! 💀😄"
+
+
+# FAQs responses block
+
+  utter_report_side_effects:
+  - text: "You should consider calling the facility and reporting the side effects."
+
+  utter_treatment_regiment:
+  - text: |-
+      To access detailed information about your treatment, follow these steps:
+      
+      1. Open the treatment application on your device.
+      2. Navigate to your treatment profile within the application.
+      3. You should find comprehensive information about your treatment regimen there, including dosage instructions, frequency, and any additional guidelines.
+      
+      If you have any further questions or need more personalized guidance, don't hesitate to reach out to your treatment provider at the facility. They are available to educate and assist you throughout your treatment journey.
+
+  utter_stable_client:
+  - text: |-
+      A stable client refers to a person living with HIV who is on Antiretroviral Therapy (ART) and demonstrates good adherence to their medication. As a stable client, you do not require frequent clinical consultations.
+
+
+  utter_visit_frequency:
+  - text: |-
+      For clients who are stable, a differentiated care model is often implemented. Under this model, they typically attend clinical consultations every 6 months.
+
+
+  utter_viral_load_meaning:
+  - text: |-
+      Viral load refers to the amount of virus present in your body. It is measured in copies per milliliter (cp/ml).
+      
+      A high viral load indicates a significant amount of the virus in your body. This means the results show a value higher than 836 cp/ml.
+      
+      On the other hand, a low detectable viral load (LDL VL) refers to results with a number less than 800 cp/ml. It suggests a lower amount of the virus present.
+
+
+  utter_suppressed_vs_undetectable_viral_load:
+  - text: |-
+      When we talk about a suppressed viral load, it means that the results show a value under the 800 cp/ml mark. This is similar to a low detectable viral load (LDL), indicating that the amount of virus in your blood is kept below that threshold.
+      
+      On the other hand, an undetectable viral load means that the HIV virus in your blood is at an extremely low level. It's so low that it cannot be reliably measured using the available tests. However, it's important to note that even though it's undetectable, it doesn't mean the virus is completely gone from your body.
+
+  utter_baby_dependant_eid:
+  - text: "You should visit the facility ,so that they can be immediately get started on Art treatment."
+
+
+  utter_vl_sample_frequency:
+  - text: |-
+      The frequency of viral load sample collection depends on your stability as a client. Typically, for stable clients, it is recommended to have a viral load test every 3 months.
+      
+      However, for clients who may be facing challenges with medication adherence or experiencing instability, the treatment provider will provide guidance on the appropriate frequency based on your individual circumstances and how well you are adhering to taking your medication.
+
+
+
+  # Symptoms Questions
+
+
+
+  # Treatment Questions
+
+
+
+  # care for self and others 
+
+
+
+  # General Questions block
+
+  #utter_faq_2/temperature_fever_signs:
+  #- text: "A fever is usually indicated by a body temperature of 100.4°F (38°C) or higher."
+
+  #utter_faq_2/headache_home_medication:
+  #- text: "Headaches can be treated with over-the-counter pain relievers like ibuprofen or acetaminophen, or home remedies like applying a cold compress to the forehead."
+
+  #utter_faq_2/cold_symptoms_signs:
+  #- text: "The symptoms of a cold can include a runny or stuffy nose, sore throat, cough, congestion, and mild body aches."
+
+  #utter_faq_2/what_is_hivtype1:
+  #- text: "HIV type 1 is a virus that atacks the immune system and can lead to AIDS (Acquired Immunodeficiency Syndrome)."
+
+  #utter_faq_2/hivtype1_hivtype2:
+  #- text: "HIV type 1 and type 2 are different strains of the HIV virus. HIV type 1 is more common worldwide and is more easily transmited than HIV type 2. HIV type 2 is mainly found in West Africa."
+
+  #utter_faq_2/signs_symptoms_hivtype1:
+  #- text: "The symptoms of HIV type 1 can vary from person to person and can include fever, fatigue, rash, headache, sore throat, swollen lymph nodes, and muscle and joint pain. In some cases, there may be no symptoms at all." 
+
+  #utter_faq_2/hivtype1_cure:
+  #- text: "HIV type 1 cannot be cured, but it can be managed with and retroviral therapy (ART)."
+
+  #utter_faq_2/hivtype1_spread_transmitted:
+  #- text: "HIV type 1 is transmited through blood, semen, vaginal fluids, and breast milk. The most common ways of transmission are through unprotected sex, sharing needles, and mother-to-child transmission during pregnancy, childbirth, or breastfeeding." 
+
+  #utter_faq_2/causal_contact:
+  #- text: "HIV type 1 is not transmited through casual contact such as hugging, shaking hands, or sharing utensils."
+
+  #utter_faq_2/riskfactor_danger:
+  #- text: "Risk factors for HIV type 1 include unprotected sex, sharing needles or other injection equipment, having multiple sexual partners, and having a sexually transmitted infection (STI)." 
+
+  #utter_faq_2/prevent_avoid:
+  #- text: "HIV type 1 can be prevented by using condoms during sex, not sharing needles, getting tested regularly for HIV and STIs, and taking pre-exposure prophylaxis (PrEP) if at high risk."
+
+  #utter_faq_2/infection_detect_identify:
+  #- text: "HIV type 1 can be detected as early as 2-4 weeks after infection using a HIV RNA test, but it may take up to 3 months to detect with a standard HIV and body test."
+
+  #utter_faq_2/testing_time:
+  #- text: "The window period for HIV type 1 testing is the time between infection and when a test can detect the virus. It is generally 2-12 weeks for anybody tests and 1-4 weeks for HIV RNA tests."
+
+  #utter_faq_2/test_available:
+  #- text: "There are several types of HIV tests available, including anybody tests, antigen/antibody tests, and nucleic acid tests."
+
+  #utter_faq_2/accurate_reliable_test:
+  #- text: "HIV tests are highly accurate, but false positves and false negatives can occur. It is important to follow up with confirmatory testing and counselling."
+
+  #utter_faq_2/positive_for_hivtype1:
+  #- text: "If you test positive for HIV type 1, it is important to seek medical care and begin treatment as soon as possible. It is also important to notify your sexual partners and encourage them to get tested."
+
+  #utter_faq_2/treatment_option:
+  #- text: "Treatment options for HIV type 1 include antiretroviral therapy (ART), which is a combinaton of medications that can help control the virus and prevent the progression to AIDS."
+
+  #utter_faq_2/effective_medication:
+  #- text: "HIV medications are highly effective at suppressing the virus and can significantly improve quality of life for people living with HIV."
+
+  #utter_faq_2/negative_side_effects:
+  #- text: "HIV medications can cause side effects, including nausea, vomiting, diarrhea, headache, fatigue, and rash. These side effects are usually mild and go away on their own."
+
+  #utter_faq_2/pregnant_take_medication:
+  #- text: "HIV medications can be taken during pregnancy, but it is important to consult with a healthcare provider to determine the best treatment plan" 
+
+  #utter_faq_2/medication_interactions:
+  #- text: "HIV medications can interact with other medications, so it is important to tell your healthcare provider about all medications and supplements you are taking."
+
+  #utter_faq_2/viralload_measurement:
+  #- text: "Viral load is the amount of HIV in the blood and is measured using a HIV RNA test."
+
+  #utter_faq_2/important_cd4_count:
+  #- text: "CD4 count is a measure of the immune system's strength and is important in determining when to start ART."
+
+  #utter_faq_2/frequent_check_cd4_viralload:
+  #- text: "Viral load and CD4 count should be checked regularly, generally every 3-6 months."
+
+  #utter_faq_2/stigma_discrimination:
+  #- text: "HIV/AIDS stigma and discrimination can make it difficult for people living with HIV to access healthcare and social support."
+#
+  #utter_faq_2/cope_with_diagnosis:
+  #- text: "Coping with an HIV diagnosis can be challenging, but there are resources available, including counseling, support groups, and medication adherence programs."
+
+  #utter_faq_2/talk_with_partner:
+  #- text: "To talk to your partner about HIV testing, start by seeing aside a time when both of you can have an open and honest conversation. Approach the topic with sensitivity and care, and explain why you feel it's important for both of you to get tested. Be clear about your own testing status, and encourage your partner to share theirs as well. Emphasize that getting tested is a responsible and loving thing to do for each other and for your relationship."
+
+  #utter_faq_2/disclosure_laws:
+  #- text: "In Kenya, it is illegal for someone living with HIV to knowingly infect another person. Disclosure of one's HIV status is required before engaging in any sexual activity or sharing needles. Failure to disclose one's status could result in criminal charges. Additionally, there are protections in place to prevent discrimination against people living with HIV in the workplace and in healthcare settings."
+
+  #utter_faq_2/children_possibility:
+  #- text: "Yes, you can still have children if you are HIV-positive. With proper medical care and treatment, it is possible to greatly reduce the risk of mother-to-child transmission of HIV. Your doctor can discuss options with you, including antiretroviral therapy during pregnancy and delivery, and delivery by Caesarean section."
+
+  #utter_faq_2/prevent_motherchild_transmission:
+  #- text: "To prevent mother-to-child transmission of HIV, it is important for HIV-positive women to take antiretroviral therapy (ART) during pregnancy, delivery, and breastfeeding. Additionally, newborns should receive ART for at least four to six weeks after birth. Other preventive measures include elective caesarean delivery and avoiding breasteeding if formula is safe and available."
+
+  #utter_faq_2/support_living_hiv:
+  #- text: "You can support a loved one living with HIV by providing emotional support and understanding, educating yourself about HIV and its treatment, helping them adhere to their medication regimen, and advocating for their rights and needs. You can also encourage them to seek medical care and connect them to HIV support groups and resources."
+
+  #utter_faq_2/donate_if_positive:
+  #- text: "No, if you are HIV-positive, you cannot donate blood. Donating blood while HIV-positive poses a risk of transmitting the virus to the recipient, and it is considered unethical and illegal in most countries."
+
+  #utter_faq_2/prevention_control_strategies:
+  #- text: "In Kenya, HIV/AIDS prevention and control measures include widespread HIV testing and counseling, provision of free antiretroviral therapy (ART) to those who are HIV-positive, condom distribution, education on safe sex practices, and promotion of voluntary medical male circumcision."
+
+  #utter_faq_2/travel_if_positive:
+  #- text: "Yes, you can travel abroad if you are HIV-positive. However, it is important to research the entry requirements of the country you plan to visit, as some countries may have restrictions or requirements for people with HIV."
+
+  #utter_faq_2/access_treatment:
+  #- text: "In Kenya, HIV treatment and care services are available through public and private health facilities. The government provides free antiretroviral therapy (ART) to all Kenyans living with HIV, and there are also non-governmental organizations that provide support and treatment services. To access HIV treatment and care services, you can visit a health facility near you or contact an HIV support organization."
+
+  #utter_faq_2/prep_work_function:
+  #- text: "PrEP (pre-exposure prophylaxis) is a medication that is taken daily to prevent HIV infection in people who are at high risk of acquiring the virus, such as those with a partner who is HIV-positive or those who engage in high-risk sexual behavior. PrEP works by blocking the virus from replicating in the body."
+
+  #utter_faq_2/prevent_sex_transmission:
+  #- text: "Yes, PrEP can significantly reduce the risk of HIV transmission during sex, especially when combined with other preventive measures such as condom use. However, it is important to notethat PrEP does not offer complete protection against HIV and should always be used incombination with other prevention methods."
+
+  #utter_faq_2/prep_effectiveness:
+  #- text: "PrEP is highly effective at preventing HIV transmission when taken consistently and correctly.According to studies, PrEP can reduce the risk of getting HIV by more than 90 percent. However,it is important to note that PrEP does not provide protection against other sexually transmittedinfections or pregnancy."
+
+  #utter_faq_2/prep_effects:
+  #- text: "The most common side effects of PrEP include nausea, diarrhea, and headache. These side effects usually go away on their own within a few weeks of starting the medication. In rare cases,PrEP can cause more serious side effects such as kidney problems, liver problems, and bonedensity loss. It is important to talk to a healthcare provider about any concerns regarding sideeffects."
+
+  #utter_faq_2/prepuse_pregnant_breastfeeding:
+  #- text: "PrEP is generally not recommended for pregnant or breastfeeding individuals unless there is a high risk of HIV transmission. In such cases, healthcare providers can help determine if PrEP isappropriate and safe."
+
+  #utter_faq_2/right_best_treatment:
+  #- text: "PrEP may be a good option for individuals who are at high risk of getting HIV, including those with a partner who is HIV-positive, those who engage in unprotected sex, and those who inject drugs. Healthcare providers can help assess an individual's risk and determine if PrEP is appropriate."
+
+  #utter_faq_2/purchase_obtain_prep:
+  #- text: "PrEP can be obtained through healthcare providers and clinics in Kenya. It is important to talk to a healthcare provider about obtaining PrEP and to have regular check-ups to monitor for any side effects or changes in HIV status."
+
+  #utter_faq_2/prep_function_work:
+  #- text: "PrEP (pre-exposure prophylaxis) is a medication that is taken daily to prevent HIV infection in people who are at high risk of acquiring the virus, such as those with a partner who is HIV-positive or those who engage in high-risk sexual behavior. PrEP works by blocking the virus from  replicating in the body."
+
+  #utter_faq_2/prevent_hiv_sexspread:
+  #- text: "Yes, PrEP can significantly reduce the risk of HIV transmission during sex, especially when combined with other preventive measures such as condom use. However, it is important to notethat PrEP does not offer complete protection against HIV and should always be used incombination with other prevention methods."
+#
+  #utter_faq_2/pep_timetaken:
+  #- text: "PEP (Post-exposure prophylaxis) should ideally be started within 72 hours (3 days) of exposure to HIV, but it may be effective up to 120 hours (5 days) after exposure. It is most effective when taken as soon as possible after exposure."
+
+  #utter_faq_2/mental_psychological_effect:
+  #- text: "HIV can impact mental health by causing depression, anxiety, and other mental health problems.People living with HIV may also face stigma and discrimination, which can contribute to poor mental health. It's important for people with HIV to prioritize their mental health and seek support when needed."
+
+  #utter_faq_2/adverse_mental_effect:
+  #- text: "Some HIV medications can cause mental health problems, such as depression or anxiety, as side effects. However, the benefits of HIV treatment generally outweigh the risks of these side effects. It's important to talk to a healthcare provider about any concerns with medication side effects"
+
+  #utter_faq_2/mental_health_resources:
+  #- text: "There are a variety of mental health resources available for people living with HIV, including counseling, support groups, and medication management. These resources can be found through healthcare providers, community organizations, and online resources."
+
+  #utter_faq_2/reinfect_hivtype1:
+  #- text: "Yes, it is possible to be re-infected with HIV type 1. People living with HIV should take precautions to prevent exposure to the virus and practice safe sex and other preventive measures."
+#
+  #utter_faq_2/breastfeeding_transmission:
+  #- text: "HIV type 1 can be transmited through breastfeeding, although the risk can be reduced through treatment and other preventive measures. Women living with HIV should work closely with healthcare providers to develop a safe plan for feeding their infants"
+
+  #utter_faq_2/support_advocacy_research:
+  #- text: "There are many ways to support HIV research and advocacy efforts, such as donating to organizations that conduct research, volunteering at local community organizations, and advocating for policies that support HIV prevention and treatment."
+
+  #utter_faq_2/drug_resistance:
+  #- text: "HIV drug resistance occurs when the virus mutates and becomes resistant to the drugs used to treat it. This can happen when a person does not take their medications as prescribed, or when the virus is transmited from someone who already has drug-resistant HIV."
+
+  #utter_faq_2/drug_resistance_diagnosis:
+  #- text: "Viral load testing and resistance testing are used to diagnose HIV drug resistance. These tests can show whether the virus is still susceptible to treatment or has developed a resistance to it."
+
+  #utter_faq_2/drug_resistance_treatment:
+  #- text: "Treatment options for HIV drug resistance include switching to different medications or combination therapies that may be more effective against the resistant strain of HIV"
+
+  #utter_faq_2/drug_resistance_prevention:
+  #- text: "To prevent HIV drug resistance, it is important to take HIV medications as prescribed and to work closely with healthcare providers to ensure that the virus is being effectively suppressed. It's also important to practice safe sex and other preventive measures to reduce the risk of exposure to drug-resistant HIV."
+
+  #utter_faq_2/manage_hiv_fatigue:
+  #- text: "Management of HIV-related fatigue involves regular physical activity, good nutrition, adequate rest and sleep, stress reduction techniques, and treating underlying conditions like anemia or depression. Your doctor can recommend appropriate management strategies based on the cause of your fatigue"
+
+  #utter_faq_2/manage_hiv_pain:
+  #- text: "Management of HIV-related pain depends on the type of pain and the underlying cause. Options include over-the-counter pain relievers, prescription pain medications, nerve blockers, physical therapy, acupuncture, and massage. Your doctor can help determine the best approach for your specific situation"
+
+  #utter_faq_2/hiv_oralsex_transmission:
+  #- text: "Yes, HIV can be transmited through oral sex, though the risk is generally lower than for anal or vaginal sex. The risk can be reduced by using barriers such as condoms or dental dams, limiting the number of sexual partners, and avoiding sexual contact with open sores or cuts."
+
+  #utter_faq_2/hiv_analsex_transmission:
+  #- text: "Yes, HIV can be transmited through anal sex, which carries a higher risk of transmission than vaginal sex. The risk can be reduced by using barriers such as condoms, limiting the number of sexual partners, and avoiding sexual contact with open sores or cuts."
+
+  #utter_faq_2/hiv_vaginalsex_transmission:
+  #- text: "Yes, HIV can be transmited through vaginal sex, which carries a lower risk of transmission than anal sex. The risk can be reduced by using barriers such as condoms, limiting the number of sexual partners, and avoiding sexual contact with open sores or cuts."
+
+  #utter_faq_2/riskfactors_sex_transmission:
+  #- text: "Risk factors for HIV transmission through sex include having unprotected sex with someone who is HIV-positive or whose HIV status is unknown, having multiple sexual partners, having other sexually transmited infections, and engaging in high-risk sexual activities such as anal sex."
+
+  #utter_faq_2/reduce_sex_transmission:
+  #- text: "You can reduce your risk of HIV transmission during sex by using barriers such as condoms or dental dams, limiting the number of sexual partners, avoiding sexual contact with open sores or cuts, and getting tested for HIV and other sexually transmited infections"
+
+  #utter_faq_2/support_community_prevention:
+  #- text: "You can support HIV prevention efforts in your community by promoting awareness and education about HIV/AIDS, encouraging HIV testing and early diagnosis, advocating for access to prevention and treatment services, and challenging stigma and discrimination against people living with HIV."
+
+  #utter_faq_2/hivaids_fight_advocacy:
+  #- text: "You can get involved in HIV/AIDS advocacy by volunteering with local or national organizations that work on HIV-related issues, participating in advocacy campaigns and events, and engaging with your elected officials to promote HIV-related policies and funding."
+
+  #utter_faq_2/aids_signs_symptoms:
+  #- text: "The symptoms of AIDS can vary from person to person and depend on the stage of the disease. In the early stages, some people may experience flu-like symptoms such as fever, headache, fatigue, and swollen glands. As the disease progresses, more serious symptoms may develop such as weight loss, chronic diarrhea, cough, shortness of breath, and infections such as pneumonia or tuberculosis."
+
+  #utter_faq_2/aids_cure:
+  #- text: "Currently, there is no cure for AIDS. However, antiretroviral therapy (ART) can help people with HIV manage the virus and prevent it from progressing to AIDS"
+
+  #utter_faq_2/life_expectancy:
+#- text: "Life expectancy for someone with AIDS depends on various factors such as their age, overall health, and access to treatment. With proper treatment and management of the disease, many people with AIDS are able to live long, healthy lives. However, without treatment, the life expectancy for someone with AIDS is generally shorter"
+
+  #utter_faq_2/what_opportunistic_infection:
+  #- text: "Opportunistic infections are infections that take advantage of a weakened immune system. These infections are caused by organisms that are usually harmless in healthy people, but can cause serious illness in people with weakened immune systems, such as those with HIV/AIDS."
+
+  #utter_faq_2/hivcommon_opportunistic_infection:
+  #- text: "There are several opportunistic infections that are common in people with HIV/AIDS. Some examples include pneumocystis pneumonia (PCP), cryptococcal meningitis, cytomegalovirus (CMV) infection, and tuberculosis"
+
+  #utter_faq_2/opportunistic_infection_prevention:
+  #- text: "Opportunistic infections can be prevented by managing HIV with antiretroviral therapy (ART) and by taking preventive medications for specific infections. It is also important for people with HIV/AIDS to practice good hygiene and avoid exposure to certain infectious agents."
+
+  #utter_faq_2/thrush_relation:
+  #- text: "Thrush is a type of fungal infection that is common in people with HIV/AIDS. It is caused by an overgrowth of a type of yeast called Candida. Thrush can affect the mouth, throat, or genitals, and can cause symptoms such as white patches in the mouth or throat, pain or discomfort during sex, and itching or burning in the affected area. Thrush is related to HIV because it often occurs in people with weakened immune systems, such as those with HIV/AIDS."
+
+actions:
+- action_default_fallback
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
