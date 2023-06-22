@@ -1,0 +1,148 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+# - rule: activate appointment form
+#   steps:
+#   - intent: appointment
+#   - action: appointment_form
+#   - active_loop: appointment_form
+
+# - rule: submit form
+#   condition:
+#   - active_loop: appointment_form
+#   steps:
+#   - action: appointment_form
+#   - active_loop: null
+#   - action: utter_submit
+#   - action: utter_slots_values
+
+- rule: defining how to always start the conversation and handling user input from the menu selection option
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+
+
+- rule: Handling out of scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_services
+
+# - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+#   steps:
+#   - intent: nlu_fallback
+#   - action: utter_please_rephrase
+
+- rule: Handling user affirmations
+  steps:
+  - intent: affirm
+  - action: utter_affirm
+
+- rule: Handling user affirmations deny
+  steps:
+  - intent: deny
+  - action: utter_deny
+
+
+# - rule: respond to chitchat
+#   steps:
+#   - intent: chitchat
+#   - action: utter_chitchat
+
+
+- rule: Implementation of the Two-Stage-Fallback
+  steps:
+  - intent: nlu_fallback
+  - action: action_two_stage_fallback
+  - active_loop: action_two_stage_fallback
+  
+
+- rule: responding to fAQ Report side effects
+  steps:
+  - intent: report_side_effects
+  - action: utter_report_side_effects
+
+- rule: responding to fAQ Visit frequency
+  steps:
+  - intent: visit_frequency
+  - action: utter_visit_frequency
+
+- rule: responding to fAQ Treatment regiment
+  steps:
+  - intent: treatment_regiment
+  - action: utter_treatment_regiment
+
+- rule: responding to fAQ Baby dependant EID
+  steps:
+  - intent: baby_dependant_eid
+  - action: utter_baby_dependant_eid
+
+- rule: responding to fAQ on Stable client
+  steps:
+  - intent: stable_client
+  - action: utter_stable_client
+
+- rule: responding to fAQ viral load meaning
+  steps:
+  - intent: viral_load_meaning
+  - action: utter_viral_load_meaning
+
+- rule: responding to fAQ vl sample frequency
+  steps:
+  - intent: vl_sample_frequency
+  - action: utter_vl_sample_frequency
+
+- rule: responding to fAQ suppressed_vs_undetectable_viral_load
+  steps:
+  - intent: suppressed_vs_undetectable_viral_load
+  - action: utter_suppressed_vs_undetectable_viral_load
+
+
+
+# Responding to FAQs and chitchat questions
+#- rule: respond to FAQs
+#  steps:
+#  - intent: faq
+#  - action: utter_faq
+
+#- rule: respond to FAQs for General Questions
+#  steps:
+#  - intent: faq_2
+#  - action: utter_faq_2
+
+
+- rule: respond to chitchat ask name
+  steps:
+  - intent: ask_name
+  - action: utter_ask_name
+
+- rule: respond to chitchat ask age
+  steps:
+  - intent: ask_age
+  - action: utter_ask_age
+
+- rule: respond to chitchat ask weather
+  steps:
+  - intent: ask_weather
+  - action: utter_ask_weather
+
+- rule: respond to chitchat how are you
+  steps:
+  - intent: how_are_you
+  - action: utter_how_are_you
+
+- rule: respond to chitchat joke
+  steps:
+  - intent: joke
+  - action: utter_joke
