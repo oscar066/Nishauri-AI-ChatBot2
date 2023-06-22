@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Rasa Core Visualisation</title>
+    <script src="https://dagrejs.github.io/project/dagre-d3/latest/dagre-d3.min.js"></script>
+    <script src="https://dagrejs.github.io/project/dagre/latest/dagre.min.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://dagrejs.github.io/project/graphlib-dot/v0.6.3/graphlib-dot.js"></script>
+</head>
+<body>
+<div id="errormsg" style="color: #b00"></div>
+<svg>
+    <style id="graph-style">
+        .node.invisible > rect {
+            display: none;
+        }
+
+        .node.start > rect {
+            fill: #7f7;
+            rx: 30;
+            ry: 18;
+        }
+
+        .node.end > rect {
+            fill: #f77;
+            rx: 30;
+            ry: 18;
+        }
+
+        .node:not(.active) > rect, .node:not(.active) > .label {
+            opacity: 0.4;
+        }
+
+        .edgePath:not(.active) path {
+            opacity: 0.4;
+        }
+
+        .node.ellipsis > rect {
+            fill: #CCC;
+        }
+
+        .node.intent > rect {
+            fill: #7ff;
+        }
+
+        .node.dashed > rect {
+            stroke-dasharray: 5;
+        }
+
+        text {
+            font-weight: 300;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serf, serif;
+            font-size: 14px;
+            color: #1f1d1d;
+        }
+
+        .node rect {
+            stroke: #444;
+            fill: #fff;
+            stroke-width: 1.5px;
+        }
+
+        .edgePath path {
+            stroke: #333;
+            stroke-width: 1.5px;
+        }
+
+        svg {
+            position: fixed;
+            top: 10px;
+            left: 0;
+            height: 100%;
+            width: 100%
+        }
+    </style>
+    <g></g>
+</svg>
+<script>
+
+  function serveGraph() {
+    let oldInputGraphValue;
+
+    const url = 'visualization.dot';
+    const refreshInterval = 500;
+
+    // trigger a refresh by fetching an updated graph
+    setInterval(function () {
+      fetch(url).then(r => r.text()).then(dot => {
+        document.getElementById('errormsg').innerHTML = '';
+        if (oldInputGraphValue === dot) return;
+
+        oldInputGraphValue = dot;
+        drawGraph(dot);
+      }).catch(err => {
+        document.getElementById('errormsg').innerHTML =
+          'Failed to update plot. (' + err.message + ')';
+      });
+    }, refreshInterval);
+  }
+
+  function drawGraph(graph) {
+    let g = graphlibDot.read(graph);
+    // Set margins, if not present
+    if (!g.graph().hasOwnProperty("marginx") &&
+      !g.graph().hasOwnProperty("marginy")) {
+      g.graph().marginx = 20;
+      g.graph().marginy = 20;
+    }
+    g.graph().transition = function (selection) {
+      return selection.transition().duration(300);
+    };
+    // Render the graph into svg g
+    d3.select("svg g").call(render, g);
+  }
+  // Set up zoom support
+  const svg = d3.select("svg"),
+    inner = d3.select("svg g"),
+    zoom = d3.zoom().on("zoom", function () {
+      inner.attr("transform", d3.event.transform);
+    });
+  svg.call(zoom);
+
+  // Create and configure the renderer
+  const render = dagreD3.render();
+
+  let isClient = false;
+  isClient = true;
+
+  if (isClient) {
+    // Mark all nodes and their edges as active
+    cssRules = document.getElementById('graph-style').sheet.cssRules;
+    cssRules[3].style.opacity = 1;
+    cssRules[4].style.opacity = 1;
+
+    let graph;
+    graph = `digraph  {
+0 [class="start active", fillcolor=green, fontsize=12, label=START, style=filled];
+"-1" [class=end, fillcolor=red, fontsize=12, label=END, style=filled];
+1 [class="", fontsize=12, label=utter_greet];
+2 [class="", fontsize=12, label=utter_viral_load_meaning];
+3 [class="", fontsize=12, label=utter_vl_sample_frequency];
+4 [class="", fontsize=12, label=utter_thank];
+5 [class="", fontsize=12, label=utter_goodbye];
+7 [class="", fontsize=12, label=utter_report_side_effects];
+8 [class="", fontsize=12, label=utter_visit_frequency];
+13 [class="", fontsize=12, label=utter_treatment_regiment];
+14 [class="", fontsize=12, label=utter_baby_dependant_eid];
+15 [class="", fontsize=12, label=utter_stable_client];
+22 [class="", fontsize=12, label=utter_treatment_regiment];
+23 [class="", fontsize=12, label=utter_report_side_effects];
+24 [class="", fontsize=12, label=utter_viral_load_meaning];
+25 [class="", fontsize=12, label=utter_visit_frequency];
+28 [class="", fontsize=12, label=utter_vl_sample_frequency];
+41 [class="", fontsize=12, label=utter_report_side_effects];
+44 [class="", fontsize=12, label=utter_stable_client];
+46 [class="", fontsize=12, label=utter_vl_sample_frequency];
+47 [class="", fontsize=12, label=utter_visit_frequency];
+54 [class="", fontsize=12, label=utter_suppressed_vs_undetectable_viral_load];
+58 [class="", fontsize=12, label=utter_happy];
+60 [class="", fontsize=12, label=utter_cheer_up];
+61 [class="", fontsize=12, label=utter_did_that_help];
+69 [class="", fontsize=12, label=utter_baby_dependant_eid];
+73 [class="", fontsize=12, label=utter_stable_client];
+76 [class="", fontsize=12, label="..."];
+79 [class="", fontsize=12, label=utter_iamabot];
+81 [class="", fontsize=12, label=utter_chitchat];
+83 [class="", fontsize=12, label=utter_faq_2];
+84 [class=intent, fillcolor=lightblue, label="hey dude", shape=rect, style=filled];
+85 [class=intent, fillcolor=lightblue, label="Can you tell me the name of my current treatment regimen?", shape=rect, style=filled];
+86 [class=intent, fillcolor=lightblue, label="What's a High viral load and LDL viral load?", shape=rect, style=filled];
+87 [class=intent, fillcolor=lightblue, label="What should I do If I get side effects from the medicine given?", shape=rect, style=filled];
+88 [class=intent, fillcolor=lightblue, label="What's the name of the treatment regimen I'm taking?", shape=rect, style=filled];
+89 [class=intent, fillcolor=lightblue, label="/None", shape=rect, style=filled];
+90 [class=intent, fillcolor=lightblue, label="I am going to save the world", shape=rect, style=filled];
+91 [class=intent, fillcolor=lightblue, label="I am disappointed", shape=rect, style=filled];
+92 [class=intent, fillcolor=lightblue, label="/stable_client", shape=rect, style=filled];
+93 [class=intent, fillcolor=lightblue, label="What's the name of the treatment regimen I'm taking?", shape=rect, style=filled];
+94 [class=intent, fillcolor=lightblue, label="What is the recommended frequency for VL sample collection?", shape=rect, style=filled];
+95 [class=intent, fillcolor=lightblue, label="/None", shape=rect, style=filled];
+96 [class=intent, fillcolor=lightblue, label="thanks!", shape=rect, style=filled];
+97 [class=intent, fillcolor=lightblue, label="How frequently do stable clients need to attend check-ups?", shape=rect, style=filled];
+98 [class=intent, fillcolor=lightblue, label="bye bye", shape=rect, style=filled];
+99 [class=intent, fillcolor=lightblue, label="Are there specific guidelines for stable clients regarding facility visits?", shape=rect, style=filled];
+100 [class=intent, fillcolor=lightblue, label="Can you tell me the name of my current treatment regimen?", shape=rect, style=filled];
+101 [class=intent, fillcolor=lightblue, label="Thank you so much", shape=rect, style=filled];
+102 [class=intent, fillcolor=lightblue, label="What should I do if my baby's EID results come back positive?", shape=rect, style=filled];
+103 [class=intent, fillcolor=lightblue, label="/None", shape=rect, style=filled];
+104 [class=intent, fillcolor=lightblue, label="Are there specific steps to follow if my baby's EID results are positive?", shape=rect, style=filled];
+105 [class=intent, fillcolor=lightblue, label="/stable_client", shape=rect, style=filled];
+106 [class=intent, fillcolor=lightblue, label="/None", shape=rect, style=filled];
+107 [class=intent, fillcolor=lightblue, label="Can you explain the difference between High viral load and LDL viral load?", shape=rect, style=filled];
+108 [class=intent, fillcolor=lightblue, label="What is the recommended frequency for VL sample collection?", shape=rect, style=filled];
+109 [class=intent, fillcolor=lightblue, label="What steps should I take if I encounter any side effects?", shape=rect, style=filled];
+110 [class=intent, fillcolor=lightblue, label="Can you explain the difference between High viral load and LDL viral load?", shape=rect, style=filled];
+111 [class=intent, fillcolor=lightblue, label="How frequently do stable clients need to attend check-ups?", shape=rect, style=filled];
+112 [class=intent, fillcolor=lightblue, label="If my baby's/dependant's EID results are positive should I visit the health facility?", shape=rect, style=filled];
+113 [class=intent, fillcolor=lightblue, label=thx, shape=rect, style=filled];
+114 [class=intent, fillcolor=lightblue, label="/None", shape=rect, style=filled];
+115 [class=intent, fillcolor=lightblue, label="/None", shape=rect, style=filled];
+116 [class=intent, fillcolor=lightblue, label="/None", shape=rect, style=filled];
+117 [class=intent, fillcolor=lightblue, label="/None", shape=rect, style=filled];
+118 [class=intent, fillcolor=lightblue, label="/None", shape=rect, style=filled];
+119 [class=intent, fillcolor=lightblue, label="thanks a bunch for everything", shape=rect, style=filled];
+120 [class=intent, fillcolor=lightblue, label="that's correct", shape=rect, style=filled];
+121 [class=intent, fillcolor=lightblue, label=never, shape=rect, style=filled];
+122 [class=intent, fillcolor=lightblue, label="thanks a bunch for everything", shape=rect, style=filled];
+123 [class=intent, fillcolor=lightblue, label="thank u", shape=rect, style=filled];
+124 [class=intent, fillcolor=lightblue, label=cya, shape=rect, style=filled];
+125 [class=intent, fillcolor=lightblue, label="you are chatbot", shape=rect, style=filled];
+126 [class=intent, fillcolor=lightblue, label="How are things with you?", shape=rect, style=filled];
+127 [class=intent, fillcolor=lightblue, label="What are the chances that someone will contract HIV through sex?", shape=rect, style=filled];
+0 -> 76  [class="", key=NONE, label=""];
+0 -> 84  [class="", key=0];
+0 -> 85  [class="", key=0];
+1 -> 86  [class="", key=0];
+1 -> 87  [class="", key=0];
+1 -> 88  [class="", key=0];
+1 -> 89  [class="", key=0];
+1 -> 90  [class="", key=0];
+1 -> 91  [class="", key=0];
+1 -> 92  [class="", key=0];
+1 -> 93  [class="", key=0];
+2 -> 94  [class="", key=0];
+2 -> 95  [class="", key=0];
+3 -> 96  [class="", key=0];
+3 -> 97  [class="", key=0];
+4 -> 98  [class="", key=0];
+5 -> "-1"  [class="", key=NONE, label=""];
+7 -> 99  [class="", key=0];
+7 -> 100  [class="", key=0];
+8 -> 101  [class="", key=0];
+13 -> 102  [class="", key=0];
+13 -> 103  [class="", key=0];
+13 -> 104  [class="", key=0];
+14 -> 105  [class="", key=0];
+14 -> 106  [class="", key=0];
+15 -> 107  [class="", key=0];
+15 -> 108  [class="", key=0];
+22 -> 109  [class="", key=0];
+23 -> 110  [class="", key=0];
+24 -> 111  [class="", key=0];
+25 -> 112  [class="", key=0];
+28 -> 113  [class="", key=0];
+41 -> 114  [class="", key=0];
+44 -> 115  [class="", key=0];
+46 -> 116  [class="", key=0];
+47 -> 117  [class="", key=0];
+47 -> 118  [class="", key=0];
+54 -> 119  [class="", key=0];
+58 -> "-1"  [class="", key=NONE, label=""];
+60 -> 61  [class="", key=NONE, label=""];
+61 -> 120  [class="", key=0];
+61 -> 121  [class="", key=0];
+69 -> 122  [class="", key=0];
+73 -> 123  [class="", key=0];
+76 -> 124  [class="", key=0];
+76 -> 125  [class="", key=0];
+76 -> 126  [class="", key=0];
+76 -> 127  [class="", key=0];
+79 -> "-1"  [class="", key=NONE, label=""];
+81 -> "-1"  [class="", key=NONE, label=""];
+83 -> "-1"  [class="", key=NONE, label=""];
+84 -> 1  [class="", key=0];
+85 -> 22  [class="", key=0];
+86 -> 2  [class="", key=0];
+87 -> 7  [class="", key=0];
+88 -> 22  [class="", key=0];
+89 -> 41  [class="", key=0];
+90 -> 58  [class="", key=0];
+91 -> 60  [class="", key=0];
+92 -> 73  [class="", key=0];
+93 -> 13  [class="", key=0];
+94 -> 3  [class="", key=0];
+95 -> 46  [class="", key=0];
+96 -> 4  [class="", key=0];
+97 -> 8  [class="", key=0];
+98 -> 5  [class="", key=0];
+99 -> 8  [class="", key=0];
+100 -> 13  [class="", key=0];
+101 -> 4  [class="", key=0];
+102 -> 14  [class="", key=0];
+103 -> 14  [class="", key=0];
+104 -> 69  [class="", key=0];
+105 -> 15  [class="", key=0];
+106 -> 44  [class="", key=0];
+107 -> 2  [class="", key=0];
+108 -> 28  [class="", key=0];
+109 -> 23  [class="", key=0];
+110 -> 24  [class="", key=0];
+111 -> 25  [class="", key=0];
+112 -> 14  [class="", key=0];
+113 -> 4  [class="", key=0];
+114 -> 13  [class="", key=0];
+115 -> 2  [class="", key=0];
+116 -> 47  [class="", key=0];
+117 -> 13  [class="", key=0];
+118 -> 54  [class="", key=0];
+119 -> 4  [class="", key=0];
+120 -> 58  [class="", key=0];
+121 -> 5  [class="", key=0];
+122 -> 4  [class="", key=0];
+123 -> 4  [class="", key=0];
+124 -> 5  [class="", key=0];
+125 -> 79  [class="", key=0];
+126 -> 81  [class="", key=0];
+127 -> 83  [class="", key=0];
+}
+`;
+    drawGraph(graph);
+  } else {
+    serveGraph();
+  }
+
+
+</script>
+</body>
+</html>
