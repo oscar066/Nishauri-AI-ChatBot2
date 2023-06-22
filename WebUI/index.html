@@ -1,0 +1,58 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="node_modules/@scalableminds/chatroom/dist/Chatroom.css"/>
+  <link rel="stylesheet" type="text/css" href="./index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+  <title>NishauriBot</title>
+</head>
+<body>
+  <div class="chat-container">
+    <button id="speechButton">Speak</button>
+  </div>
+  
+  <script src="node_modules/@scalableminds/chatroom/dist/Chatroom.js"></script>
+
+  <script type="text/javascript">
+
+    var chatroom = new window.Chatroom({
+
+      host: "https://1f51-102-166-106-21.eu.ngrok.io",
+
+      title: "Chat with NishauriBot",
+
+      container: document.querySelector(".chat-container"),
+
+      welcomeMessage: "Hello, I am NishauriBot.",
+
+      speechRecognition: "en-US",
+
+      //speechRecognition: true, // Enable speech recognition
+
+      voiceLang: "en-US",
+
+      speechSynthesis: true
+
+    });
+
+    chatroom.openChat();
+
+    // Add event listener for speech input
+  var recognition = new window.SpeechRecognition();
+  recognition.continuous = true;
+
+  recognition.onresult = function(event) {
+    var transcript = event.results[event.results.length - 1][0].transcript;
+    // Send the transcript to the chatbot
+    chatroom.sendMessage(transcript);
+  };
+
+  // Add event listener to the "Speak" button
+  var speechButton = document.getElementById("speechButton");
+  speechButton.addEventListener("click", function() {
+    recognition.start();
+  });
+
+  </script>
+</body>

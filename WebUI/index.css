@@ -1,0 +1,70 @@
+* {
+    font-family: "Open Sans", Helvetica, "Helvetica Neue", sans-serif;
+    box-sizing: border-box;
+  }
+  
+  .chat-container {
+    margin: 100px auto;
+    width: 360px;
+    z-index: 100;
+    box-shadow: 0 0 3em rgb(89, 114, 97);
+    background-image: url("background1.jpeg");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .chat-container h1 {
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    background-color: #007bff;
+  }
+  
+  @media (max-width: 400px) {
+    .chat-container {
+      margin: 20px 10px;
+      width: auto;
+    }
+  }
+
+  .chatroom {
+    width: 100%;
+    height: 600px;
+    color: #343d4e;
+    max-height: 90vh;
+    background-color: hsla(0, 0%, 78.4%, 0.1); /* Increased opacity value */
+    border-radius: 3px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    letter-spacing: normal;
+    overflow: hidden;
+    box-shadow: 0  0 2px hsla(120, 39%, 27%, 0.4);
+  }
+  
+  
+  body {
+    background-image: url("background-image2.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-color: hsla(131, 70%, 12%, 0.4);
+  }
+
+  .chatroom .chats .chat.left:before {
+    content: "\f0f0"; 
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 5px;
+    color:  #343d4e; 
+  }
+  
+  .chatroom .chats .chat.right:before {
+    /*content: "\f007"; /* User icon (Font Awesome) */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 5px;
+  }
+  
+  .chatroom .chats .chat.left {
+    background-color: rgb(182, 234, 182); 
+  }
