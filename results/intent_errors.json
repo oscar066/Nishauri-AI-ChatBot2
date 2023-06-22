@@ -1,0 +1,122 @@
+[
+  {
+    "text": "okay",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.9966081380844116
+    }
+  },
+  {
+    "text": "alright",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.7821999788284302
+    }
+  },
+  {
+    "text": "absolutely",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.8418030738830566
+    }
+  },
+  {
+    "text": "definitely",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.9673384428024292
+    }
+  },
+  {
+    "text": "sure",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.9966086149215698
+    }
+  },
+  {
+    "text": "absolutely right",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.8843646049499512
+    }
+  },
+  {
+    "text": "no doubt",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9959565997123718
+    }
+  },
+  {
+    "text": "affirmative",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.300420343875885
+    }
+  },
+  {
+    "text": "no thank you",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.9999134540557861
+    }
+  },
+  {
+    "text": "no thanks",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.9999761581420898
+    }
+  },
+  {
+    "text": "I disagree",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.5268273949623108
+    }
+  },
+  {
+    "text": "that's incorrect",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9880782961845398
+    }
+  },
+  {
+    "text": "How do I learn a new language?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.9996001124382019
+    }
+  },
+  {
+    "text": "Can you help me with my taxes?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.8097108006477356
+    }
+  },
+  {
+    "text": "How do I create a website?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.9999556541442871
+    }
+  }
+]

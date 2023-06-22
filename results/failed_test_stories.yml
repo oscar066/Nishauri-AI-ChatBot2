@@ -1,0 +1,97 @@
+version: "3.1"
+stories:
+- story: happy path 1 (./venv/lib/python3.8/site-packages/rasa/cli/initial_project/tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great  # predicted: thank: amazing
+  - action: utter_happy  # predicted: utter_treatment_regiment
+- story: happy path 2 (./venv/lib/python3.8/site-packages/rasa/cli/initial_project/tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great  # predicted: thank: amazing
+  - action: utter_happy  # predicted: utter_treatment_regiment
+  - intent: goodbye
+  - action: utter_goodbye
+- story: sad path 1 (./venv/lib/python3.8/site-packages/rasa/cli/initial_project/tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy  # predicted: deny: not good
+  - action: utter_cheer_up  # predicted: action_default_fallback
+  - action: utter_did_that_help  # predicted: action_listen
+  - intent: affirm
+  - action: utter_happy  # predicted: utter_viral_load_meaning
+- story: sad path 2 (./venv/lib/python3.8/site-packages/rasa/cli/initial_project/tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy  # predicted: deny: not good
+  - action: utter_cheer_up  # predicted: action_default_fallback
+  - action: utter_did_that_help  # predicted: action_listen
+  - intent: deny
+  - action: utter_goodbye  # predicted: utter_viral_load_meaning
+- story: sad path 3 (./venv/lib/python3.8/site-packages/rasa/cli/initial_project/tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy  # predicted: nlu_fallback: very terrible
+  - action: utter_cheer_up  # predicted: action_default_fallback
+  - action: utter_did_that_help  # predicted: action_listen
+  - intent: deny
+  - action: utter_goodbye  # predicted: action_default_fallback
+- story: say goodbye (./venv/lib/python3.8/site-packages/rasa/cli/initial_project/tests/test_stories.yml)
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye  # predicted: utter_baby_dependant_eid
+- story: path for user starting with any question (./tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - user: |-
+      What should I do If I get side effects from the medicine given?
+  - action: utter_report_side_effects
+  - user: |-
+      What's the name of the treatment regimen I'm taking?
+  - action: utter_treatment_regiment
+  - user: |-
+      What should I do if my baby's EID results come back positive?
+  - action: utter_baby_dependant_eid
+  - user: |-
+      What does it mean to be a stable client?
+  - action: utter_stable_client
+  - user: |-
+      What does viral load mean?
+  - action: utter_viral_load_meaning
+  - user: |-
+      How frequently should I get my viral load sample taken?
+  - action: utter_vl_sample_frequency
+  - user: |-
+      How often should I visit for check-ups?
+  - action: utter_visit_frequency
+  - user: |-
+      What is the treatment regimen?
+  - action: utter_treatment_regiment
+  - user: |-
+      Can babies become dependent on early infant diagnosis?
+  - action: utter_baby_dependant_eid
+  - user: |-
+      What does it mean to be considered a stable client?
+  - action: utter_stable_client
+  - user: |-
+      What's a High viral load and LDL viral load?
+  - action: utter_viral_load_meaning
+  - user: |-
+      How frequently do I need to provide a sample for viral load testing?
+  - action: utter_vl_sample_frequency
+  - user: |-
+      How often should I visit the facility if I am a stable client?
+  - action: utter_visit_frequency
+  - user: |-
+      What's the difference between Suppressed viral load and Undetectable viral load?
+  - action: utter_suppressed_vs_undetectable_viral_load
+  - intent: thank
+  - action: utter_thank
+  - intent: goodbye
+  - action: utter_goodbye
