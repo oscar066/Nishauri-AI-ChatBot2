@@ -46,10 +46,10 @@ Steps:
 1. User enters a text: The interaction begins with the user entering a text message or query into the chatbot interface. This text serves as the input for the machine learning models powering the chatbot.
 
 2. Rasa NLU model: The user's text input is then passed through the Rasa NLU (Natural Language Understanding) model. Rasa NLU is responsible for analyzing and classifying the text into its corresponding intent, selecting the intent with the highest probability.
-![Rasa NLU Image](images/nlu.ppg)
+![Rasa NLU Image](images/nlu.jpeg)
 
 3. Intent identification: Once the correct intent has been determined by Rasa NLU, the next step is to predict the appropriate action or response based on this identified intent. This prediction is performed by the Rasa Core model, which focuses on dialog management to ensure a smooth and intelligent conversation flow.
-![Rasa Core Image](images/core.jpg)
+![Rasa Core Image](images/core.jpeg)
 
 4. Action or response prediction: Leveraging the insights gathered from the identified intent, Rasa Core predicts the most suitable action or response to be delivered by the chatbot.
 
