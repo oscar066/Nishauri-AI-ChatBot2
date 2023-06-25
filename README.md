@@ -46,9 +46,11 @@ Steps:
 1. User enters a text: The interaction begins with the user entering a text message or query into the chatbot interface. This text serves as the input for the machine learning models powering the chatbot.
 
 2. Rasa NLU model: The user's text input is then passed through the Rasa NLU (Natural Language Understanding) model. Rasa NLU is responsible for analyzing and classifying the text into its corresponding intent, selecting the intent with the highest probability.
+
 ![Rasa NLU Image](images/nlu.jpeg)
 
 3. Intent identification: Once the correct intent has been determined by Rasa NLU, the next step is to predict the appropriate action or response based on this identified intent. This prediction is performed by the Rasa Core model, which focuses on dialog management to ensure a smooth and intelligent conversation flow.
+
 ![Rasa Core Image](images/core.jpeg)
 
 4. Action or response prediction: Leveraging the insights gathered from the identified intent, Rasa Core predicts the most suitable action or response to be delivered by the chatbot.
@@ -57,5 +59,40 @@ Steps:
 
 ## The User Interface
 Web UI interface
-![WebUI Image](images/WebUI.jpeg)
 
+<img src="images/WebUI.jpeg" alt="WebUI Image" width="400px">
+
+## How to Run the Chatbot
+1. Clone the repository
+```yaml
+git clone https://github.com/oscar066/Nishauri-AI-ChatBot2.git
+```
+2. Create a virtual environment
+```yaml
+python3 -m venv venv
+```
+3. Activate the virtual environment
+```yaml
+source venv/bin/activate
+```
+4. Install the required dependencies
+```yaml
+pip install -r requirements.txt
+```
+5. Train the Rasa models
+```yaml
+rasa train
+```
+6. Run the Rasa on terminal
+```yaml
+rasa shell
+```
+7. Run the Rasa on web interface
+```yaml
+1.rasa run -m models --enable-api --cors "*" --debug
+
+then open another terminal and run
+
+2.python http.server 5050
+
+```
