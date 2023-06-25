@@ -22,6 +22,8 @@ examples:
   - hello
   - Hey
   - Wasssup
+  - Hi
+  ```
 
 
 2. `stories.yml`: This file comprises example conversations that guide the chatbot on how to respond appropriately based on the predicted intent of the previous user message in the conversation. For example:
@@ -29,6 +31,7 @@ examples:
 ```yaml
 intent: greeting
 Action: utter_greet
+```
 
 3. `rules.yml`: This file outlines specific segments of conversations that should consistently follow a predetermined path, regardless of prior user messages in the conversation. Rules help enforce specific behaviors or actions based on recognized intents. For example
     
@@ -36,6 +39,7 @@ Action: utter_greet
 rules:
   - intent: nlu_fallback
     Action: utter_please_rephrase
+```
 
 ## Architecture and Design
 Steps:
