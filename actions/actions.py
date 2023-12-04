@@ -44,25 +44,25 @@ class ActionDefaultFallback(Action):
 
 # Appointment booking Action         
 
-# class AppointmentBooking(Action):
-#     def name(self) -> Text:
-#         return "action_appointment_booking"
+class AppointmentBooking(Action):
+    def name(self) -> Text:
+        return "action_appointment_booking"
 
-#     def run(self, dispatcher: CollectingDispatcher, 
-#         tracker: Tracker, 
-#         domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+    def run(self, dispatcher: CollectingDispatcher, 
+        tracker: Tracker, 
+        domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-#         name = tracker.get_slot("name")
-#         day = tracker.get_slot("day")
-#         date = tracker.get_slot("date")
+        name = tracker.get_slot("name")
+        day = tracker.get_slot("day")
+        date = tracker.get_slot("date")
 
-#         # Logic to process the appointment booking and store the details
+        # Logic to process the appointment booking and store the details
 
-#         appointment_details = f"Appointment booked for {name} on {day}, {date}."
+        appointment_details = f"Appointment booked for {name} on {day}, {date}."
         
-#         dispatcher.utter_message(text=appointment_details)
+        dispatcher.utter_message(text=appointment_details)
 
-#         return []
+        return []
 
 # # Setting up Medication reminder action
 
