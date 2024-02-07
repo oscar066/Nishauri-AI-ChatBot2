@@ -22,7 +22,7 @@ stories:
   - action: utter_cheer_up  # predicted: action_default_fallback
   - action: utter_did_that_help  # predicted: action_listen
   - intent: affirm
-  - action: utter_happy  # predicted: utter_viral_load_meaning
+  - action: utter_happy  # predicted: utter_affirm
 - story: sad path 2 (./venv/lib/python3.8/site-packages/rasa/cli/initial_project/tests/test_stories.yml)
   steps:
   - intent: greet
@@ -31,20 +31,20 @@ stories:
   - action: utter_cheer_up  # predicted: action_default_fallback
   - action: utter_did_that_help  # predicted: action_listen
   - intent: deny
-  - action: utter_goodbye  # predicted: utter_viral_load_meaning
+  - action: utter_goodbye  # predicted: utter_treatment_regiment
 - story: sad path 3 (./venv/lib/python3.8/site-packages/rasa/cli/initial_project/tests/test_stories.yml)
   steps:
   - intent: greet
   - action: utter_greet
   - intent: mood_unhappy  # predicted: nlu_fallback: very terrible
-  - action: utter_cheer_up  # predicted: action_default_fallback
+  - action: utter_cheer_up  # predicted: utter_stable_client
   - action: utter_did_that_help  # predicted: action_listen
   - intent: deny
-  - action: utter_goodbye  # predicted: action_default_fallback
-- story: say goodbye (./venv/lib/python3.8/site-packages/rasa/cli/initial_project/tests/test_stories.yml)
+  - action: utter_goodbye  # predicted: utter_deny
+- story: bot challenge (./venv/lib/python3.8/site-packages/rasa/cli/initial_project/tests/test_stories.yml)
   steps:
-  - intent: goodbye
-  - action: utter_goodbye  # predicted: utter_baby_dependant_eid
+  - intent: bot_challenge
+  - action: utter_iamabot  # predicted: utter_treatment_regiment
 - story: path for user starting with any question (./tests/test_stories.yml)
   steps:
   - intent: greet

@@ -1,10 +1,4 @@
 {
-  "visit_frequency": {
-    "precision": 0.75,
-    "recall": 1.0,
-    "f1-score": 0.8571428571428571,
-    "support": 6
-  },
   "": {
     "precision": 0.0,
     "recall": 0.0,
@@ -12,40 +6,10 @@
     "support": 14
   },
   "utter_stable_client": {
-    "precision": 1.0,
+    "precision": 0.8888888888888888,
     "recall": 1.0,
-    "f1-score": 1.0,
+    "f1-score": 0.9411764705882353,
     "support": 8
-  },
-  "utter_iamabot": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_did_that_help": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 3
-  },
-  "mood_unhappy": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 3
-  },
-  "utter_goodbye": {
-    "precision": 1.0,
-    "recall": 0.7857142857142857,
-    "f1-score": 0.88,
-    "support": 14
-  },
-  "thank": {
-    "precision": 0.8333333333333334,
-    "recall": 1.0,
-    "f1-score": 0.9090909090909091,
-    "support": 10
   },
   "affirm": {
     "precision": 1.0,
@@ -53,35 +17,59 @@
     "f1-score": 1.0,
     "support": 1
   },
-  "vl_sample_frequency": {
-    "precision": 0.8571428571428571,
-    "recall": 1.0,
-    "f1-score": 0.923076923076923,
-    "support": 6
-  },
-  "utter_greet": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 16
-  },
-  "stable_client": {
-    "precision": 0.75,
-    "recall": 1.0,
-    "f1-score": 0.8571428571428571,
-    "support": 6
-  },
-  "bot_challenge": {
+  "utter_suppressed_vs_undetectable_viral_load": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 1
   },
-  "mood_great": {
+  "vl_sample_frequency": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 6
+  },
+  "utter_iamabot": {
     "precision": 0.0,
     "recall": 0.0,
     "f1-score": 0.0,
-    "support": 2
+    "support": 1
+  },
+  "utter_vl_sample_frequency": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8
+  },
+  "utter_did_that_help": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 3
+  },
+  "stable_client": {
+    "precision": 0.8571428571428571,
+    "recall": 1.0,
+    "f1-score": 0.923076923076923,
+    "support": 6
+  },
+  "mood_unhappy": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 3
+  },
+  "visit_frequency": {
+    "precision": 0.75,
+    "recall": 1.0,
+    "f1-score": 0.8571428571428571,
+    "support": 6
+  },
+  "baby_dependant_eid": {
+    "precision": 0.8571428571428571,
+    "recall": 1.0,
+    "f1-score": 0.923076923076923,
+    "support": 6
   },
   "action_listen": {
     "precision": 0.9716981132075472,
@@ -90,40 +78,10 @@
     "support": 103
   },
   "utter_treatment_regiment": {
-    "precision": 0.8,
+    "precision": 0.6666666666666666,
     "recall": 1.0,
-    "f1-score": 0.888888888888889,
+    "f1-score": 0.8,
     "support": 8
-  },
-  "utter_vl_sample_frequency": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 8
-  },
-  "baby_dependant_eid": {
-    "precision": 0.8571428571428571,
-    "recall": 1.0,
-    "f1-score": 0.923076923076923,
-    "support": 6
-  },
-  "report_side_effects": {
-    "precision": 0.8571428571428571,
-    "recall": 1.0,
-    "f1-score": 0.923076923076923,
-    "support": 6
-  },
-  "utter_cheer_up": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 3
-  },
-  "treatment_regiment": {
-    "precision": 0.75,
-    "recall": 1.0,
-    "f1-score": 0.8571428571428571,
-    "support": 6
   },
   "greet": {
     "precision": 1.0,
@@ -131,11 +89,29 @@
     "f1-score": 1.0,
     "support": 16
   },
-  "utter_viral_load_meaning": {
-    "precision": 0.8,
+  "utter_visit_frequency": {
+    "precision": 1.0,
     "recall": 1.0,
-    "f1-score": 0.888888888888889,
+    "f1-score": 1.0,
     "support": 8
+  },
+  "mood_great": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 2
+  },
+  "thank": {
+    "precision": 0.8333333333333334,
+    "recall": 1.0,
+    "f1-score": 0.9090909090909091,
+    "support": 10
+  },
+  "utter_greet": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 16
   },
   "viral_load_meaning": {
     "precision": 0.75,
@@ -143,35 +119,41 @@
     "f1-score": 0.8571428571428571,
     "support": 6
   },
-  "utter_visit_frequency": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 8
-  },
-  "utter_baby_dependant_eid": {
-    "precision": 0.8888888888888888,
-    "recall": 1.0,
-    "f1-score": 0.9411764705882353,
-    "support": 8
-  },
-  "goodbye": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 12
-  },
-  "utter_thank": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 10
-  },
   "deny": {
     "precision": 0.5,
     "recall": 1.0,
     "f1-score": 0.6666666666666666,
     "support": 2
+  },
+  "report_side_effects": {
+    "precision": 0.8571428571428571,
+    "recall": 1.0,
+    "f1-score": 0.923076923076923,
+    "support": 6
+  },
+  "utter_baby_dependant_eid": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8
+  },
+  "bot_challenge": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_viral_load_meaning": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8
+  },
+  "treatment_regiment": {
+    "precision": 0.75,
+    "recall": 1.0,
+    "f1-score": 0.8571428571428571,
+    "support": 6
   },
   "utter_happy": {
     "precision": 0.0,
@@ -179,11 +161,29 @@
     "f1-score": 0.0,
     "support": 3
   },
-  "utter_suppressed_vs_undetectable_viral_load": {
+  "goodbye": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 1
+    "support": 12
+  },
+  "utter_goodbye": {
+    "precision": 1.0,
+    "recall": 0.8571428571428571,
+    "f1-score": 0.923076923076923,
+    "support": 14
+  },
+  "utter_cheer_up": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 3
+  },
+  "utter_thank": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10
   },
   "utter_report_side_effects": {
     "precision": 1.0,
@@ -192,21 +192,21 @@
     "support": 7
   },
   "micro avg": {
-    "precision": 0.9243421052631579,
+    "precision": 0.9304635761589404,
     "recall": 0.9006410256410257,
-    "f1-score": 0.9123376623376623,
+    "f1-score": 0.9153094462540715,
     "support": 312
   },
   "macro avg": {
-    "precision": 0.7301671533393231,
-    "recall": 0.8058035714285714,
-    "f1-score": 0.7611924985918793,
+    "precision": 0.7088129866726565,
+    "recall": 0.7767857142857143,
+    "f1-score": 0.7364473825967635,
     "support": 312
   },
   "weighted avg": {
-    "precision": 0.851788210042927,
+    "precision": 0.8551001758548927,
     "recall": 0.9006410256410257,
-    "f1-score": 0.8724494253155839,
+    "f1-score": 0.8744942892835247,
     "support": 312
   },
   "accuracy": 0.9006410256410257,
