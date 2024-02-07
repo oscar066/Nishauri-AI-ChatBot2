@@ -1,2 +1,5 @@
 #.gitignore
 .rasa/
+model/
+venv/
+
